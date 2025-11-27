@@ -1,0 +1,5 @@
+mongo:
+  uri: "mongodb+srv://UserImaBig:fitbnvBPzozgflDD@clusterbigdata.ifotnv2.mongodb.net/?retryWrites=true&w=majority&appName=ClusterBigData"
+  db: "ETL_ProyectoFinal"
+  coll1: "audios"
+  coll2: "similitudes"

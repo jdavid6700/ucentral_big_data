@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="fw-bold mb-3">
+    Detalle de la Providencia {{ data["providencia"] }}
+</h3>
+
+<div class="card card-custom p-4 shadow-sm">
+
+    <h6 class="mb-1"><strong>Tipo:</strong> {{ data["tipo"] }}</h6>
+    <h6 class="mb-3"><strong>Año:</strong> {{ data["anio"] }}</h6>
+
+    <hr>
+
+    <h5 class="fw-semibold mb-3">Texto (página {{ pagina + 1 }})</h5>
+
+    <p style="white-space: pre-wrap; font-size: 1.1rem;">
+        {{ fragmento }}
+    </p>
+
+    <div class="d-flex justify-content-between mt-4">
+
+        {% if hay_anterior %}
+        <a class="btn btn-outline-secondary"
+           href="/detalle/{{ data['providencia'] }}/{{ pagina - 1 }}">
+            ← Página anterior
+        </a>
+        {% else %}
+        <span></span>
+        {% endif %}
+
+        {% if hay_siguiente %}
+        <a class="btn btn-primary"
+           href="/detalle/{{ data['providencia'] }}/{{ pagina + 1 }}">
+            Página siguiente →
+        </a>
+        {% endif %}
+
+    </div>
+
+    <!-- Botón REGRESAR-->
+    <div class="d-flex justify-content-center mt-4">
+        <a href="javascript:history.back()" 
+        class="btn btn-outline-secondary btn-sm px-5">
+            <i class="fa-solid fa-arrow-left"></i> Regresar
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
